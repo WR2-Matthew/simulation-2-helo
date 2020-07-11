@@ -3,8 +3,8 @@ const massive = require('massive'),
   express = require('express'),
   app = express(),
   session = require('express-session'),
-  authCtrl = require('./controllers/authController')
-{ CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
+  authCtrl = require('./controllers/authController'),
+  { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
 
 app.use(express.json());
 
@@ -25,6 +25,7 @@ massive({
   console.log('DB had a successful connection, good work people!')
 }).catch(err => console.log(err));
 
-app.post('auth/login', authCtrl.loginUser)
+app.post('/auth/register', authCtrl.registerUser)
+app.post('/auth/login', authCtrl.loginUser)
 
 app.listen(SERVER_PORT, () => console.log(`We will move forward on to galaxy ${SERVER_PORT}`));

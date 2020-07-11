@@ -1,0 +1,74 @@
+.mainPage {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(99deg,#ff70a6,#ff9770 40%,#ffd670 73%,#e9ff70);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.authForm {
+  width: 33vw;
+  height: 54vh;
+  box-shadow: 1px 2px 2px 2px rgb(92, 92, 92);
+  border-radius: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcomeMessage {
+  height: 30vh;
+  width: 33vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.authImg { 
+  height: 150px;
+  width: 150px;
+}
+
+.helo {
+font-weight: 700;
+color: white;
+font-size: 80px;
+margin: 10px;
+}
+
+.authInputHolder {
+  height: 12vh;
+  width: 24vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputBoxes {
+  display: flex;
+  width: 24vw;
+  justify-content: space-evenly;
+  margin-top: 12px;
+  
+}
+
+.inputBoxes, label {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 3px;
+}
+
+.authButtons {
+  height: 5vh;
+  width: 24vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.authButton {
+  color: white;
+  background-color: rgb(85, 84, 84);
+  border-radius: 6%;
+}
