@@ -65,7 +65,7 @@ class Auth extends Component {
 
             <div className='inputBoxes'>
               <label>Password:</label>
-              <input placeholder='Password' name='password' value={password} className='authInputs' onChange={(e) => this.handleChange(e)} />
+              <input type='password' placeholder='Password' name='password' value={password} className='authInputs' onChange={(e) => this.handleChange(e)} />
             </div>
           </div>
 

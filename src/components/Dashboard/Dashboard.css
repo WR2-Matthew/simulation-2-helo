@@ -1,4 +1,84 @@
 .dashboard {
   height: 100vh;
   width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  flex-direction: column;
+} 
+
+.dashBar {
+  height: 8vh;
+  width: 60.85vw;
+  display: flex;
+  flex-direction: row;
+  padding-left: 30px;
+  padding-right: 30px;
+  align-items: center;
+  background-image: linear-gradient(99deg,#ff70a6,#ff9770 40%,#ffd670 73%,#e9ff70);
+  margin-bottom: 20px;
+  box-shadow: 1px 2px 2px 2px rgb(92, 92, 92);
+}
+
+.dashInput {
+  width: 42vw;
+}
+
+.resetButton {
+  color: white;
+  background-color: rgb(85, 84, 84);
+  border-radius: 6%;
+}
+
+.checkBoxHolder {
+  height: 8vh;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 130px;
+}
+
+.dashHolder {
+  height: 85vh;
+  width: 65vw;
+  background-image: linear-gradient(99deg,#ff70a6,#ff9770 40%,#ffd670 73%,#e9ff70);
+  overflow: hidden;
+  overflow-y: auto;
+  box-shadow: 1px 2px 2px 2px rgb(92, 92, 92);
+}
+
+.post {
+  height: 12vh;
+  width: 62vw;
+  background-color: white;
+  box-shadow: 1px 2px 2px 2px rgb(92, 92, 92);
+  margin-left: 20px;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.postTitle {
+  margin-left: 20px;
+}
+
+.postUserInfo {
+  display: flex;
+  margin-right: 20px;
+}
+
+.usernamePost {
+  display: flex;
+  align-items: flex-end;
+}
+
+.img {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  background-color: black;
 }

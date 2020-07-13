@@ -9,7 +9,7 @@ id serial primary key
 );  
 
 create table posts (
-authorId int references users(id),
+author_id int references users(id),
 post_id serial primary key, 
 title varchar(40),
 image varchar(5000),

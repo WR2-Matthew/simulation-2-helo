@@ -13,12 +13,12 @@ class Nav extends Component {
   };
 
   render() {
-    const { username, profilePicture } = this.props
+    const { user } = this.props
     return (
       <div className='nav'>
         <div className='userInfo'>
-          <img className='roboImg' alt='empty' src={profilePicture} />
-          <p>{username}</p>
+          {/* <img className='roboImg' alt='empty' src={user.profilePicture} />
+          <p>{user.username}</p> */}
         </div>
 
         <div className='homeAndForm'>
@@ -35,10 +35,8 @@ class Nav extends Component {
 };
 
 function mapStateToProps(state) {
-  console.log(state)
   return {
-    username: state.user,
-    profilePicture: state.profilePicture
+    user: state.user
   }
 };
 

@@ -1,14 +1,17 @@
-import { GET_USER } from './constraints'
+import { GET_USER, GET_ALL_POSTS } from './constraints'
 
 const initialState = {
-  user: null
+  user: null,
+  posts: []
 }
 
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case GET_USER:
-      return Object.assign({}, state, action.payload)
+      return Object.assign({}, state, action.payload);
+    case GET_ALL_POSTS:
+      return Object.assign({}, state, action.payload);
     default:
       return state;
   };

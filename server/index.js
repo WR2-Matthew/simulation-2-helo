@@ -4,6 +4,7 @@ const massive = require('massive'),
   app = express(),
   session = require('express-session'),
   authCtrl = require('./controllers/authController'),
+  postCtrl = require('./controllers/postController'),
   { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
 
 app.use(express.json());
@@ -27,5 +28,9 @@ massive({
 
 app.post('/auth/register', authCtrl.registerUser)
 app.post('/auth/login', authCtrl.loginUser)
+
+app.get('/api/posts', postCtrl.getAllPosts)
+app.get('/api/posts/:id', postCtrl.getPostsIf)
+app.get('/api/single/post/:id', postCtrl.singlePost)
 
 app.listen(SERVER_PORT, () => console.log(`We will move forward on to galaxy ${SERVER_PORT}`));
