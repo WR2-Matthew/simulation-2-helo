@@ -33,4 +33,8 @@ app.get('/api/posts', postCtrl.getAllPosts)
 app.get('/api/posts/:id', postCtrl.getPostsIf)
 app.get('/api/single/post/:id', postCtrl.singlePost)
 
+app.post('/api/create/post/:id', postCtrl.createPost)
+
+app.delete('/api/delete/post/:id', postCtrl.deletePost)
+
 app.listen(SERVER_PORT, () => console.log(`We will move forward on to galaxy ${SERVER_PORT}`));

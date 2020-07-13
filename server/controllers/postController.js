@@ -39,6 +39,23 @@ module.exports = {
 
     const single = await db.get_single_post(id)
     res.status(200).send(single)
+  },
+
+  createPost: async (req, res) => {
+    const { id } = req.params;
+    const { title, image, details } = req.body;
+    const db = req.app.get('db')
+
+    const created = await db.create_post(title, image, details, id)
+    res.status(200).send(created)
+  },
+
+  deletePost: async (req, res) => {
+    const { id } = req.params;
+    const db = req.app.get('db')
+
+    await db.delete_post(id)
+    res.status(200).send('Post has successfully been deleted!')
   }
 
 }

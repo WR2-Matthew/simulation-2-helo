@@ -1,4 +1,4 @@
-import { GET_USER, GET_ALL_POSTS } from './constraints'
+import { GET_USER, GET_ALL_POSTS, CREATE_POST } from './constraints'
 
 export function setUser(username, profilePicture, id) {
   return {
@@ -15,5 +15,12 @@ export function setAllPosts(data) {
     payload: {
       posts: data
     }
+  }
+}
+
+export function addCreatedPost(data) {
+  return {
+    type: CREATE_POST,
+    payload: { posts: data }
   }
 }

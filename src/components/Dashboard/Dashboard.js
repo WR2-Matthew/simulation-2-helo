@@ -19,6 +19,7 @@ class Dashboard extends Component {
   };
 
   componentDidMount = () => {
+    console.log('hit')
     axios
       .get('/api/posts')
       .then(res => {

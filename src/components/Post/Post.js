@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-import './Post.css'
+import axios from 'axios';
+import { connect } from 'react-redux';
+import './Post.css';
 
 class Post extends Component {
   constructor() {
@@ -16,10 +17,18 @@ class Post extends Component {
     axios
       .get(`/api/single/post/${this.props.match.params.postid}`)
       .then(res => this.setState({ singlePost: res.data }))
-  }
+  };
+
+  deletePost = () => {
+    // console.log('hit')
+    axios
+      .delete(`/api/delete/post/${this.props.match.params.postid}`)
+      .then(() => this.props.history.push('/dashboard'))
+  };
 
   render() {
     const { singlePost } = this.state
+    const { user } = this.props
     console.log(singlePost)
     return (
       <div className='thePost'>
@@ -46,6 +55,10 @@ class Post extends Component {
 
               <div className='postBody'>
                 <p>{singlePost[0].details}</p>
+
+                {singlePost[0].author_id !== user.id ? null
+                  : <button onClick={() => this.deletePost()} >Delete Post</button>
+                }
               </div>
             </div>
           </div>
@@ -55,4 +68,10 @@ class Post extends Component {
   };
 };
 
-export default Post;
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps)(Post);

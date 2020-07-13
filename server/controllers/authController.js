@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
   registerUser: async (req, res) => {
-    console.log('hit')
+    // console.log('hit')
     const db = req.app.get('db');
     const { username, password } = req.body;
     const profilePicture = `https://robohash.org/${username}`;
@@ -30,7 +30,7 @@ module.exports = {
   loginUser: async (req, res) => {
     const { username, password } = req.body
     const db = req.app.get('db');
-    console.log('hit')
+    // console.log('hit')
     const userCheck = await db.get_username_exists(username)
     const user = userCheck[0]
 
