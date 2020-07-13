@@ -50,5 +50,14 @@ module.exports = {
     }
 
     res.status(200).send(req.session.user)
+  },
+
+  logout: (req, res) => {
+    req.session.destroy()
+    res.status(200).send('You have been successfully logged out!')
+  },
+
+  getSession: (req, res) => {
+    res.status(200).send(req.session.user)
   }
 };

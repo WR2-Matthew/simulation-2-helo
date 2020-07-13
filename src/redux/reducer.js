@@ -1,4 +1,4 @@
-import { GET_USER, GET_ALL_POSTS, CREATE_POST } from './constraints'
+import { GET_USER, GET_ALL_POSTS, CREATE_POST, LOGOUT } from './constraints'
 
 const initialState = {
   user: null,
@@ -14,6 +14,8 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, action.payload);
     case CREATE_POST:
       return Object.assign({}, state, action.payload);
+    case LOGOUT:
+      return Object.assign({}, state, action.payload)
     default:
       return state;
   };

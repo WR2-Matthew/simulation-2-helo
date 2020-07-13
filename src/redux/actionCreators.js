@@ -1,4 +1,4 @@
-import { GET_USER, GET_ALL_POSTS, CREATE_POST } from './constraints'
+import { GET_USER, GET_ALL_POSTS, CREATE_POST, LOGOUT } from './constraints'
 
 export function setUser(username, profilePicture, id) {
   return {
@@ -22,5 +22,12 @@ export function addCreatedPost(data) {
   return {
     type: CREATE_POST,
     payload: { posts: data }
+  }
+}
+
+export function logoutRedux() {
+  return {
+    type: LOGOUT,
+    payload: { user: null }
   }
 }
