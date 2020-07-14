@@ -36,28 +36,30 @@ class Post extends Component {
           <div className='postHolder'>
             <div className='postInfo' >
               <div className='titleBox'>
-                <h1>{singlePost[0].title}</h1>
+                <h1 className='postTitleH1' >{singlePost[0].title}</h1>
               </div>
 
-              <div className='usernameInfo'>
-                <p>{`by ${singlePost[0].username}`}</p>
-              </div>
+              <div className='divity'>
+                <div className='usernameInfo'>
+                  <p>{`by ${singlePost[0].username}`}</p>
+                </div>
 
-              <div className='ProfilePicDisplay'>
-                <img className='profImg' alt='profile' src={singlePost[0].profile_picture} />
+                <div className='ProfilePicDisplay'>
+                  <img className='profImg' alt='profile' src={singlePost[0].profile_picture} />
+                </div>
               </div>
             </div>
 
             <div className='postDetails'>
               <div className='postImage'>
-                <img alt='posted' src={singlePost[0].image} />
+                <img className='postImage' alt='posted' src={singlePost[0].image} />
               </div>
 
               <div className='postBody'>
-                <p>{singlePost[0].details}</p>
+                <p className='postContent'>{singlePost[0].details}</p>
 
                 {singlePost[0].author_id !== user.id ? null
-                  : <button onClick={() => this.deletePost()} >Delete Post</button>
+                  : <button className='postDelete' onClick={() => this.deletePost()} >Delete Post</button>
                 }
               </div>
             </div>

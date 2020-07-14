@@ -1,4 +1,78 @@
 .thePost {
   height: 100vh;
   width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.postHolder {
+  background-image: linear-gradient(99deg,#ff70a6,#ff9770 40%,#ffd670 73%,#e9ff70);
+  box-shadow: 1px 2px 2px 2px rgb(92, 92, 92);
+  height: 60vh;
+  width: 65vw;
+}
+
+.postInfo {
+  display: flex;
+  padding-left: 60px;
+  padding-top: 20px;
+  margin-bottom: 10px;
+  height: 10vh;
+  width: 65vw;
+  justify-content: space-between;
+}
+
+.postTitleH1 {
+  margin: 0px;
+  font-size: 50px;
+}
+
+.divity {
+  display: flex;
+  width: 20vw;
+  
+}
+
+.profImg {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.postDetails {
+  display: flex;
+  width: 60vw;
+  height: 45vh;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.postImage {
+  height: 43vh;
+  width: 28vw;
+  margin-left: 30px;
+}
+
+.postBody {
+  height: 43vh;
+  margin-left: 100px;
+  width: 28vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.postContent {
+  margin: 0;
+}
+
+.postDelete {
+  background-color: rgb(85, 84, 84);
+  border-radius: 6%;
+  color: white;
+  height: 30px;
+  cursor: pointer;
+}
+
