@@ -1,2 +1,3 @@
 select * from posts p
-where author_id = $1;
+join users u on u.id = p.author_id
+where u.id = $1;

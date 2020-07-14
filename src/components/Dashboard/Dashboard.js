@@ -29,6 +29,7 @@ class Dashboard extends Component {
 
   componentDidUpdate = (prevProps, prevState) => {
     const { myPosts, search } = this.state
+    console.log(myPosts)
     if (prevState.myPosts !== myPosts || prevState.search !== search) {
       this.getPosts()
     }
@@ -36,10 +37,10 @@ class Dashboard extends Component {
 
   getPosts() {
     const { search, myPosts } = this.state,
-      { id } = this.props
-    // console.log(myPosts)
+      { user } = this.props
+    // console.log(user.id)
     axios
-      .get(`/api/posts/${id}?userposts=${myPosts}&search=${search}`)
+      .get(`/api/posts/${user.id}?userposts=${myPosts}&search=${search}`)
       .then(res => this.props.setAllPosts(res.data))
   }
 
@@ -66,7 +67,6 @@ class Dashboard extends Component {
   render() {
     const { search, myPosts } = this.state
     const { posts } = this.props
-    // console.log(posts)
     const mappedPosts = posts.map((e, i) => {
       return (
         <Link className='postLink' to={`/post/${e.post_id}`} key={i} style={{ textDecoration: 'none' }}>
