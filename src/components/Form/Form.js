@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { addCreatedPost } from '../../redux/actionCreators';
+import './Form.css'
 
 class Form extends Component {
   constructor() {
@@ -40,15 +41,15 @@ class Form extends Component {
     const { title, image, details } = this.state;
     // console.log(this.props.user)
     return (
-      <div className='FormHolder' >
+      <div className='formHolder' >
         <div className='form' >
           <div className='formHeader' >
-            <h1>New Post</h1>
+            <h1 className='formNew'>New Post</h1>
           </div>
 
           <div className='newPostDetails' >
             <label className='newPostLabels' >Title:</label>
-            <input placeholder="Post's Title" name='title' value={title} onChange={(e) => this.handleChange(e)} />
+            <input className='newPostInputs' placeholder="Post's Title" name='title' value={title} onChange={(e) => this.handleChange(e)} />
 
             <div className='newPostImg' >
               {!image ? <img className='newPostImage' alt='placeholder' src='https://lcp.mit.edu/static/images/missing.jpg' />
@@ -57,14 +58,14 @@ class Form extends Component {
             </div>
 
             <label className='newPostLabels' >Image URL:</label>
-            <input placeholder='Insert Image URL' name='image' value={image} onChange={(e) => this.handleChange(e)} />
+            <input className='newPostInputs' placeholder='Insert Image URL' name='image' value={image} onChange={(e) => this.handleChange(e)} />
 
             <label className='newPostLabels' >Content:</label>
-            <input placeholder='Enter Post Content' name='details' value={details} onChange={(e) => this.handleChange(e)} />
+            <input className='newPostInputs' placeholder='Enter Post Content' name='details' value={details} onChange={(e) => this.handleChange(e)} />
           </div>
 
-          <div>
-            <button onClick={() => this.createPost()} >Post</button>
+          <div className='newButtonHolder'>
+            <button className='newPostButton' onClick={() => this.createPost()} >Post</button>
           </div>
         </div>
       </div>
